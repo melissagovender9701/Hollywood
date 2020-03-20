@@ -1,0 +1,277 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+    background-color: #0a0a0a;
+    overflow-x: hidden !important;
+}
+app-top-nav .navbar{
+    background-color: #1e1e1e !important;
+}
+app-top-nav .navbar-brand img{
+    height: 50px !important;
+    width: 140px !important;
+}
+
+app-top-nav .middle-nav .navbar{
+    border-bottom: 4px solid #643e94;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    background-color:#333333 !important;
+    text-shadow: gray;
+}
+app-top-nav .middle-nav .nav-item a{
+    color: #ebebeb !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+app-top-nav .middle-nav .nav-item{
+    margin-left: 10px;
+}
+app-top-nav .bottom-nav .navbar{
+    height: 45px !important;
+    font-size: 12px;
+}
+app-top-nav .bottom-nav .date-time{
+    margin-right: -10px !important;
+}
+app-top-nav .buttons .login:hover{
+    border: 1px solid #643e94 !important;
+    background-color: transparent !important;
+}
+app-top-nav .buttons .register:hover{
+    background-color: transparent !important;
+}
+app-right-side-nav{
+    background-color: #0A0A07;
+}
+
+app-right-side-nav .btn-group button{
+    font-size: 12px !important;
+    width: 78px;
+    border-radius: 0;
+    padding-right: 1px !important;
+    padding-left: 1px !important;
+    height: 40px;
+    background-color: #643e94 !important;
+    border-color: #643e94 !important;
+    text-shadow: 1px 1px 1px #0a0a0a;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(100,62,148) 49%, rgba(100,62,148) 51%, rgba(100,62,148));
+    background-repeat: repeat-x;
+}
+app-right-side-nav .btn-group button:hover{
+    background-color: #1e1e1e !important;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(0,0,0,.14) 69%, rgba(0,0,0,.14) 51%, rgba(0,0,0,.14));
+    background-repeat: repeat-x;
+}
+app-right-side-nav .media{
+    box-shadow: 1px 1px 1px 1px #0A0A07;
+}
+app-right-side-nav .media-body:hover{
+    background-color: #643e94 !important;
+}
+
+app-right-side-nav .containerX{
+    overflow-y: auto;
+    max-height: 750px;
+    width: 400px;
+}
+app-right-side-nav .containerX h5{
+    font-size: 15px;
+    font-family: sans-serif;
+    text-shadow: 1px 1px 1px #0a0a0a;
+    text-align: left !important;
+}
+app-right-side-nav .containerX .d-flex img{
+    width: 30px;
+    height: 40px;
+}
+app-right-side-nav .containerX .d-flex {
+    width: 40px;
+    height: 50px;
+    background-color: #643e94; padding: 5px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: #2b2b2b;
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    border-radius: 10px;
+  }
+
+  app-left-side-nav .betButton{
+    border-radius: 0px!important;
+    background-color: #643e94!important;
+    border-color:#643e94!important ;
+}
+
+app-left-side-nav .btn{
+    min-width: 100% !important; font-size: 15px;
+    text-shadow: 1px 1px 1px #0a0a0a;
+    text-align: left;
+}
+app-left-side-nav button{
+    border-color: 1px solid #643e94 !important;
+}
+app-left-side-nav button:hover{
+    background-color: transparent !important;
+}
+app-footer .top-footer .right-footer h5{
+    font-size: 15px;
+}
+app-footer .top-footer .right-footer .tc {
+    font-size: 12px;
+    margin-top: -5px;
+}
+app-footer .top-footer .right-footer {
+    color: #fff;
+    font-size: 15px;
+    padding: 15px;
+}
+app-footer .top-footer{
+    background-color: #2b2b2b!important;
+    border-top: 1px solid #643e94;
+    margin-top: 20px;
+}
+app-footer h6{
+    font-size: .8em;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: 600;
+    border-bottom: 1px solid #643e94;
+    min-width: 100% !important;
+}
+app-footer a{
+    font-size: 13px;
+    color: #fff !important;
+    margin-top: 10px;
+    text-align: left;
+}
+
+app-footer button{
+    background-color: #643e94;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 2px solid #643e94;
+}
+app-footer button:hover{
+    background-color: #2b2b2b;
+}
+app-footer i{
+    color: #fff;
+    font-size: 30px !important;
+}
+app-footer i:hover{
+    transform: scale(0.7);
+}
+app-footer .text-center{
+    background: #fff !important;
+    width: 100% !important;
+}
+app-footer .text-center img{
+    height: 50px;
+    width: 80px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+app-footer .bottom-footer{ 
+    background-color: #2b2b2b !important;
+}
+app-footer .bottom-footer p{    
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+app-center .btn-group .home{
+    width: 90px; 
+    height: 30px;
+    background-color: #1e1e1e !important;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(0,0,0,.14) 69%, rgba(0,0,0,.14) 51%, rgba(0,0,0,.14));
+    background-repeat: repeat-x;
+    border-radius: 0;
+    border: 1px solid black;
+}
+app-center .btn-group .home:hover{
+    background-color: #1e1e1e !important;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(0, 0, 0, 0.548) 69%, rgba(0,0,0,0.548) 51%, rgba(0,0,0,0.548));
+    background-repeat: repeat-x;
+}
+app-center .btn-group .home:focus{
+    background-color: #643e94 !important;
+}
+app-center .btn-group .draw{
+    width: 90px;
+    height: 30px;
+    background-color: #1e1e1e !important;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(0,0,0,.14) 69%, rgba(0,0,0,.14) 51%, rgba(0,0,0,.14));
+    background-repeat: repeat-x;
+    border-radius: 0;
+    border: 1px solid black;
+}
+app-center .btn-group .draw:hover{
+    background-color: #1e1e1e !important;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(0, 0, 0, 0.548) 69%, rgba(0,0,0,0.548) 51%, rgba(0,0,0,0.548));
+    background-repeat: repeat-x;
+}
+app-center .btn-group .draw:focus{
+    background-color: #643e94 !important;
+}
+app-center .btn-group .away{
+    width: 90px;
+    height: 30px;
+    background-color: #1e1e1e !important;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(0,0,0,.14) 69%, rgba(0,0,0,.14) 51%, rgba(0,0,0,.14));
+    background-repeat: repeat-x;
+    border-radius: 0;
+    border: 1px solid black;
+}
+app-center .btn-group .away:hover{
+    background-color: #1e1e1e !important;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(0, 0, 0, 0.548) 69%, rgba(0,0,0,0.548) 51%, rgba(0,0,0,0.548));
+    background-repeat: repeat-x;
+}
+app-center .btn-group .away:focus{
+    background-color: #643e94 !important;
+}
+app-center .btn-group .name{
+    white-space: nowrap; 
+    display: inline-block;
+    width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+app-center .btn-group .price{
+    color: #fcbf12;
+    font-size: 12px;
+    margin-left: 20px;
+    white-space: nowrap; 
+    display: inline-block;
+    padding-bottom: 10px !important;
+}
+app-center .heading{
+    background-color: #333333 !important;
+    font-size: 14px;
+}

@@ -1,0 +1,59 @@
+<div class="right mr-2">
+    <div class="row">
+        <div class="btn-group gradient-buttons ml-3  mt-4" style="border-radius: 0px;" role="group" aria-label="Basic example" style="min-width: 100%;">
+            <button type="button" class="btn btn-secondary">Next Race</button>
+            <button type="button" class="btn btn-secondary">Next Int. R</button>
+            <button type="button" class="btn btn-secondary">Next Sport</button>
+        </div>
+    </div> 
+    <div class="row mt-1">
+
+        <div class="card ml-3" style="background-color: #643e94;border-radius: 0px; min-width: 100%; height: 60px;">
+            <div class="card-body">
+                <input class="form-control " [formControl]="filter" style="border-radius: 0px;min-width: 100%!important; height: 35px; margin-top: -8px;" type="search" placeholder="Search" aria-label="Search">
+            </div>
+        </div>
+
+        <div class="container-fluid ml-3 containerX"  style="background-color: #2b2b2b!important; min-width: 100%">
+            <div *ngFor="let sport of filteredSports$ | async">
+            <div class="media mt-2 mr-2 mb-2" style="min-width: 100%" >
+                <a class="d-flex" href="#" style="background-color: #643e94; " (click)="GetCountrySports(sport.id)" routerLink="countries/{{sport.id}}">
+                    <img src="{{sport.image}}" alt="">
+                </a>
+                <div class="media-body text-nowrap" style="background-color: #2b2b2b;min-height: 50px;">
+                    <h5 class="text-white mt-3 ml-2" style="text-align: center;">{{sport.name}}</h5>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+    </div>
+</div>
+
+ <!-- <div class="col-md-12">
+    <div    class="row ml-2">
+        
+    </div>
+    <div class="row mt-1">
+
+        <div class="card ml-3" style="background-color: #643e94;border-radius: 0px; min-width:100%;">
+            <div class="card-body">
+                <input class="form-control" [formControl]="filter"   style="border-radius: 0px;min-width: 100%!important;" type="search" placeholder="Search" aria-label="Search">
+            </div>
+        </div>
+
+        <div class="container-fluid ml-3 containerX"  style="background-color: #2b2b2b!important;">
+            <div *ngFor="let sport of filteredSports$ | async">
+                <div class="media mt-2" style="min-width: 100%!important;box-shadow: 1px 1px 1px 1px #000;">
+                    <a class="d-flex" href="#" style="background-color: #643e94;">
+                        <img src="{{sport.imageUrl}}" width="50" height="50" alt="">
+                    </a>
+                    <div class="media-body text-nowrap" style="background-color: #2b2b2b;min-height: 50px;">
+                        <p class="text-white mt-2 text-nowrap" style="text-align: center;">{{sport.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ -->

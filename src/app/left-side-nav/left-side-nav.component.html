@@ -1,0 +1,95 @@
+<div class="left ml-2">
+<div class="col-md-12 mt-4" style="min-width: 100% !important;">
+    <div class="row" style="min-width: 200px!important;border-radius: 0px;min-width: 100% !important;">
+        <div class="card text-white" title="bet-slip" style="border-color: transparent; background-color: #2b2b2b;min-width: 100% !important;  min-height: 180px !important; max-height: 480px !important;  border-radius: 0 !important; overflow-y: auto;" >
+            <div class="card-header" style="background-color: #643e94;border-radius: 0px;min-width: 100% !important; height: 45px !important;padding: 10px 15px;font-size: 13px; font-family: sans-serif;">
+                <div class="row">
+                    <div class="col-md-7 mt-1">
+                        Bet Slip ({{count}})
+                    </div>
+                    <div class="col-md-5">
+                        <div *ngIf="count >= 1">
+                            <button (click)="clearBetslip()" style="background-color: transparent; color: #d9534f; border: none; font-size: 16px;font-family: sans-serif;"><span style="color: #fff; font-size: 13px;">Clear</span><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            </div>
+            
+            <div class="card-body"style="min-width: 100% !important;">
+                <!-- <p class="card-text" style="font-size: 13px; margin-top: -10px; "><strong>To place a bet:</strong> Choose the sport, tournament and event that you would like to bet on. Then select a market by clicking the odds that you would like to bet on</p> -->
+                <p style="font-size: small; margin-top: -5px;">{{message}}</p>
+                <div *ngFor="let bet of item">
+                    <div class="media">
+                        <div class="media-body" style="margin-top: -15px; margin-bottom: 20px;">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p style="font-size: 14px; margin-left: -7px;font-family:sans-serif; text-shadow: 1px 1px 1px #0a0a0a;">
+                                        {{bet.id}}. {{bet.punterBetSelection}} 
+                                    </p>
+                                </div>
+                                  <div class="col-md-3">
+                                    <button (click)="removeFromBetSlip(bet)" style="background-color: transparent; color: #d9534f; border: none; font-size: 17px;">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                  </div>
+                            </div>
+                            
+                            
+                                <div class="row">
+                                    <p style="font-size:13px; font-family:sans-serif; text-shadow: 1px 1px 1px #0a0a0a;margin-left: 8px !important; font-weight: 100;"> {{bet.typeOfEvent}} {{bet.selectionOdds}}</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <p style="font-size:13px; font-family:sans-serif; text-shadow: 1px 1px 1px #0a0a0a; text-align: left; width: 125px; margin-left: -7px !important; margin-top: -13px !important;"> {{bet.event.LeagueName}}</p>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <p style="font-size:13px; font-family:sans-serif; text-shadow: 1px 1px 1px #0a0a0a;margin-left: 15px !important;color: #fcbf12; text-align: right; margin-top: -13px !important;"> {{bet.selectionOdds}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p style="font-size:13px; font-family:sans-serif; text-shadow: 1px 1px 1px #0a0a0a; text-align: left; width: 125px; margin-left: 7px !important; margin-top: -13px !important;"> {{bet.event.Time}}</p>
+                                </div>
+                                <div class="row">
+                                    <p style="font-size:13px; font-family:sans-serif; text-shadow: 1px 1px 1px #0a0a0a; text-align: left; width: 125px; margin-left: 7px !important; margin-top: -13px !important;">{{bet.event.HomeTeam}} vs {{bet.event.AwayTeam}}</p>
+                                </div>
+                                <div class="row">
+                                    <p style="color: #fcbf12; font-size: 13px;margin-left: 7px !important;"><strong>{{bet.Message}}</strong></p>
+
+                                </div>
+                                <div class="row" style="border-top: 1px solid #fff; padding-top: 12px;">
+                                    <label style="font-size:small; text-shadow: 1px 1px 1px #0a0a0a;color: #fff; margin-left: -3px;">
+                                        Stake : R  <input #stake (keyup)="onKey(stake.value,bet.selectionOdds,bet.id)" value="{{bet.stake}}" style="max-width: 25px; background-color: #2B2B2B !important; color: #fff;">
+                                    </label>
+                                    <label style="font-size:small; text-shadow: 1px 1px 1px #0a0a0a; color: #fff;">
+                                        Payout : R <input #payout (keyup)="cost(payout.value,bet.selectionOdds,bet.id)"  value="{{bet.payout}}" style="max-width: 25px;background-color: #2B2B2B !important; color: #fff;">
+                                    </label>
+                                </div>
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card bg-dark text-white mt-2" style="min-width: 100% !important;">
+          <img class="card-img" src="https://hollywoodmedia.hollywoodbets.net/images/cms/new-website/images/go-back-to-old-website.gif" alt=""style="min-width: 100% !important;border-radius: 0 !important;">
+          <div class="card-img-overlay">
+          </div>
+        </div>
+
+        <div class="mt-1" >
+            <button type="button" class="btn btn-primary betButton mt-1">Upload FICA</button>
+            <button type="button" class="btn btn-primary betButton mt-1">Sports Blog</button>
+            <button type="button" class="btn btn-primary betButton mt-1">Social Responsibility</button>
+            <button type="button" class="btn btn-primary betButton mt-1">Soccer Betting News</button>
+            <button type="button" class="btn btn-primary betButton mt-1">Winning Form</button>
+            <button type="button" class="btn btn-primary betButton mt-1">Become an Affiliate</button>
+            <button type="button" class="btn btn-primary betButton mt-1">Careers</button>
+        </div>
+       
+    </div>
+</div>
+</div>
