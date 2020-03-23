@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CenterComponent } from './center/center.component';
 import { CountriesComponent } from './countries/countries.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TournamentComponent } from './tournament/tournament.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { CountriesComponent } from './countries/countries.component';
     LeftSideNavComponent,
     FooterComponent,
     CenterComponent,
-    CountriesComponent
+    CountriesComponent,
+    DashboardComponent,
+    TournamentComponent
   ],
   imports: [
     HttpClientModule,
