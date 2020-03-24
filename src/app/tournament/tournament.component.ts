@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Tournament } from '../tournament';
+import { ActivatedRoute } from '@angular/router';
+import { SportService } from '../sport.service';
 
 @Component({
   selector: 'app-tournament',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TournamentComponent implements OnInit {
 
-  constructor() { }
+  country:any;
+  tournaments:Observable<Tournament[]>;
+  constructor(private tournamentService:SportService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getTournament();
+  }
+  ngOnChanges(){
+    this.getTournament();
   }
 
+  getTournament(){
+    var sportId =+this.route.snapshot.paramMap.get('sportId');
+    var countryId =+this.country.countryId;
+    return this.tournamentService.getTournaments(sportId,countryId).subscribe((data:any)=>{
+    this.tournaments = data;
+  })
+  }
 }

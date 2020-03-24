@@ -1,4 +1,4 @@
-export interface Tounaments{
+export interface Tournament{
     TournamentId: number;
     TournamentName: string;
 }
