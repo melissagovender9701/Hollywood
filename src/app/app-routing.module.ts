@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { CenterComponent } from './center/center.component';
 import { CountriesComponent } from './countries/countries.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TournamentComponent } from './tournament/tournament.component';
 
 const routes: Routes = [
   {path: 'dashboard', component:DashboardComponent},
   {path:'center', component:CenterComponent},
   {path:'countries/:id', component:CountriesComponent},
+  {path:'tournament/:sportid/:countryid', component:TournamentComponent},
   {path:'', redirectTo: '/center', pathMatch: 'full'}
 ];
 
