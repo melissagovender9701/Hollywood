@@ -4,6 +4,8 @@ import { SportService } from '../sport.service';
 import { Country } from '../country';
 import { Location } from '@angular/common';
 import { RouterModule, Routes , Router} from '@angular/router';
+import { CountrySport } from '../CountrySport';
+import { Tournament } from '../tournament';
 @Component({
   selector: 'app-countries',
   templateUrl: './countries.component.html',
@@ -12,7 +14,9 @@ import { RouterModule, Routes , Router} from '@angular/router';
 export class CountriesComponent implements OnInit {
   countries:Country[];
   country:any;
+  countrySport : CountrySport;
   sportid : number;
+  tournaments : any[] = [];
   constructor(private sportService:SportService, private route:ActivatedRoute, private location : Location, private router : Router) { 
     this.getCountries();
   }
@@ -22,17 +26,41 @@ export class CountriesComponent implements OnInit {
       this.getCountries();
     });
   }
+  addTournaments(country : Country, tournament: Tournament[]){
 
+    this.countrySport = {
+      sportid : this.sportid,
+      country : country,
+      tournaments : tournament
+    }
+    this.tournaments.push(this.countrySport);
+
+}
+selectcountry(selectedcountry : Country){
+
+  for(let i=0; i<this.tournaments.length; i++){
+    if(this.tournaments[i].country.id==selectedcountry.id){
+      this.tournaments.splice(i,1);
+      return;
+    }
+  }
+
+  this.sportService.getTournaments(this.sportid, selectedcountry.id)
+  .subscribe((data : any) => {
+    this.addTournaments(selectedcountry,data);
+  });
+console.log(selectedcountry.id);
+  this.router.navigateByUrl("tournament/"+this.sportid+"/"+ this.countrytest(selectedcountry));
+}
+countrytest(country:any){
+  return country.id;
+}
   getCountries(){
-    var sportId =+ this.route.snapshot.paramMap.get('id');
-    return this.sportService.getCountrySports(sportId).subscribe((data : any)=>{
+    this.sportid =+ this.route.snapshot.paramMap.get('id');
+    return this.sportService.getCountrySports(this.sportid).subscribe((data : any)=>{
       this.countries = data,
       console.log(this.countries);
     });
-  }
-  selectcountry(countryid : number){
-    var sportId =+ this.route.snapshot.paramMap.get('id');
-    this.router.navigateByUrl("tournament/"+this.sportid+"/"+countryid);
   }
 
 }

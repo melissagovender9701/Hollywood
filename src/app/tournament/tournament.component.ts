@@ -23,8 +23,8 @@ export class TournamentComponent implements OnInit {
   }
 
   getTournament(){
-    var sportId =+this.route.snapshot.paramMap.get('sportId');
-    var countryId =+this.country.countryId;
+    var sportId =+this.route.snapshot.paramMap.get('sportid');
+    const countryId = +this.route.snapshot.paramMap.get('countryid');
     return this.tournamentService.getTournaments(sportId,countryId).subscribe((data:any)=>{
     this.tournaments = data;
   })

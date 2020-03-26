@@ -12,10 +12,10 @@ export class SportService {
   
   // private sportUrl = 'assets/sport.json';
   private sportUrl = 'https://localhost:44394/api/sports';
-  private countrySportsUrl = 'https://localhost:44394/api/country';
+  private countrySportsUrl = 'https://localhost:44394/api/country?';
   private tournaments = 'https://localhost:44394/api/tournament?';
-  private sport = 'sportId=';
-  private country = '&countryId=';
+  private sport = 'id=';
+  private country = 'countryId=';
   constructor(private http:HttpClient) { }
 
   getSports():Observable<Sports[]>
@@ -24,11 +24,11 @@ export class SportService {
   }
   getCountrySports(id:number):Observable<Country[]>
   {
-    return this.http.get<Country[]>(this.countrySportsUrl+"?id="+id);
+    return this.http.get<Country[]>(this.countrySportsUrl+this.sport+id);
     
   }
-  getTournaments(sportId:number,countryId:number):Observable<Tournament[]>
+  getTournaments(id:number,countryId:number):Observable<Tournament[]>
   {
-     return this.http.get<Tournament[]>(`${this.tournaments}${this.sport}${sportId}&${this.country}${countryId}`);
+     return this.http.get<Tournament[]>(this.tournaments + this.sport + id + "&" + this.country + countryId);
   }
 }
