@@ -1,5 +1,5 @@
 <div *ngFor ="let tournament of tournaments">
-    <div class="card">
+    <div class="card"  (click)="GetTournamentEvents(tournament.id)" routerLink="event/{{tournament.tournamentId}}">
         <div class="card-body">
             <h4 class="card-title">{{tournament.tournamentId}}</h4>
             <p class="card-text">{{tournament.tournamentName}}</p>

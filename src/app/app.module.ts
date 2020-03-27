@@ -14,6 +14,7 @@ import { CenterComponent } from './center/center.component';
 import { CountriesComponent } from './countries/countries.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TournamentComponent } from './tournament/tournament.component';
+import { EventComponent } from './event/event.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { TournamentComponent } from './tournament/tournament.component';
     CenterComponent,
     CountriesComponent,
     DashboardComponent,
-    TournamentComponent
+    TournamentComponent,
+    EventComponent
   ],
   imports: [
     HttpClientModule,
