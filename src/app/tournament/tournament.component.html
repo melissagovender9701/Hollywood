@@ -1,8 +1,10 @@
-<div *ngFor ="let tournament of tournaments">
-    <div class="card"  (click)="GetTournamentEvents(tournament.tournamentId)" routerLink="event/{{tournament.tournamentId}}">
-        <div class="card-body">
-            <h4 class="card-title">{{tournament.tournamentId}}</h4>
-            <p class="card-text">{{tournament.tournamentName}}</p>
+<div class="mt-4">
+    <div *ngFor ="let tournament of tournaments">
+        <div class="card text-white mt-1" style="min-width: 100%!important;background-color: #1e1e1e;" (click)="GetTournamentEvents(tournament.tournamentId)" routerLink="event/{{tournament.tournamentId}}">
+            <div class="card-body">
+                <h4 class="card-title">{{tournament.tournamentId}}</h4>
+                <p class="card-text">{{tournament.tournamentName}}</p>
+            </div>
         </div>
     </div>
 </div>
