@@ -1,6 +1,6 @@
 export interface Events{
-    TournamentId : number;
-    EventID : number;
-    EventName : string;
-    EventDate : Date;
+    tournamentId : number;
+    eventID : number;
+    eventName : string;
+    eventDate : Date;
 }

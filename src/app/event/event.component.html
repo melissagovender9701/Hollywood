@@ -1,8 +1,15 @@
-<div *ngFor ="let events of event">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">{{events.TournamentId}}</h4>
-            <p class="card-text">{{events.EventName}}</p>
+
+<div class="col-md-12 mt-4">
+    <div *ngFor="let events of event">
+        <div class="row">
+        <div class="card mt-1 text-white" style="min-width: 100%!important;background-color: #1e1e1e;">
+          <div class="card-header">
+              {{events.eventDate | date : "EEEE, MMMM d, y"}}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{events.eventName}}</h5>
+          </div>
         </div>
-    </div>
+  </div>    
+</div>
 </div>

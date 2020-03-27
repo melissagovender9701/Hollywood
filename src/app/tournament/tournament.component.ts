@@ -30,13 +30,13 @@ export class TournamentComponent implements OnInit {
      console.log(this.arrayEvents);
    });
  }
- selectcountry(selectedevent: Tournament){
+/*  selectcountry(selectedevent: Tournament){
 
   this.router.navigateByUrl("event/"+this.tournamentid+"/"+ this.tournamenttest(selectedevent));
 }
 tournamenttest(tournament:any){
   return tournament.id;
-}
+} */
   getTournament(){
     var sportId =+this.route.snapshot.paramMap.get('sportid');
     const countryId = +this.route.snapshot.paramMap.get('countryid');

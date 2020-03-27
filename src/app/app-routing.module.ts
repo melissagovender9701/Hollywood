@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'center', component:CenterComponent},
   {path:'countries/:id', component:CountriesComponent},
   {path:'tournament/:sportid/:countryid', component:TournamentComponent},
-  {path:'event/:tournamentId', component:EventComponent},
+  {path:'tournament/:sportid/:countryid/event/:tournamentId', component:EventComponent},
   {path:'', redirectTo: '/center', pathMatch: 'full'}
 ];
 

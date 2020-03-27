@@ -11,16 +11,18 @@ import { ActivatedRoute } from '@angular/router';
 export class EventComponent implements OnInit {
 
   tournament:any;
-  event: Observable<Event[]>;
+  event: Event[];
   constructor(private eventService:SportService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getTournament();
   }
 
   getTournament(){
     var tournamentId =+this.route.snapshot.paramMap.get('tournamentId');
     return this.eventService.getEvents(tournamentId).subscribe((data:any)=>{
     this.event = data;
-  })
+    console.log(data);
+  });
   }
 }
